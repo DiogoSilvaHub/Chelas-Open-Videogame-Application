@@ -1,0 +1,18 @@
+<h1>Which Group to add to:</h1>
+
+<ul>
+	{{#each Groups}}
+		<li><div>{{this.name}}</div><div>{{this.description}}</div><div>Games:</div>
+		<ul>
+			{{#each this.games}}
+				<li><div>{{this.name}}</div><div>Rating: {{this.rating}}</div></li>
+			{{/each}}
+		</ul>
+		<form action="/addGame" method="POST" name="add">
+			<input type="hidden" name="gameID" id="gameID" value={{this.gameID}}>
+			<input type="hidden" name="id" id="id" value={{this.id}}>
+			<input type="submit" value="Add">
+		</form>
+		<br></li>
+	{{/each}}
+</ul>

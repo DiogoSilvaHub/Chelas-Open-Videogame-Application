@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title>COVIDA</title>
+		<link href="/public/css/style.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<nav>
+			<div class='navbar'>
+				<div class='navigation'>
+					<a href="/">Home</a> | 
+					<a href="/popularGames">Popular Games</a> |
+					<a href="/insertGameToSearch">Search Games</a> |
+					<a href="/insertGroupToCreate">Create Group</a> |
+					<a href="/listGroups">List Groups</a>
+				</div>
+				<div id='userinfo'>
+					<span class='userinfo'>
+						{{#if user}}
+							User: {{user.username}} | 
+							<a href="/logout">Logout</a>
+						{{else}}
+							<a href="/register">Register</a> |
+							<a href="/login">Login</a>
+						{{/if}}
+					</span>
+				</div>
+			</div>
+		</nav>
+		<hr>
+		{{{body}}}
+	</body>
+</html>

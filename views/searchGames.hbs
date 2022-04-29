@@ -1,0 +1,12 @@
+<h1>Here are the Games you searched for:</h1>
+
+<ul>
+	{{#each Games}}
+		<li><div>{{this.name}}</div><div>Rating:{{this.rating}}</div>
+		<form action="/whichGroup" method="POST">
+			<input type="hidden" name="id" id="id" value={{this.id}}>
+			<input type="submit" value="Add to Group">
+		</form>
+		<br></li>
+	{{/each}}
+</ul>

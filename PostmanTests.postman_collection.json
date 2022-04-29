@@ -1,0 +1,1065 @@
+{
+	"info": {
+		"_postman_id": "1d11b647-fdee-47e7-877b-4ac2c9e759d5",
+		"name": "PostmanTests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TestPopularGames",
+			"item": [
+				{
+					"name": "Test Get Popular Games",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8888/popularGames",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"popularGames"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TestSearchGamesByName",
+			"item": [
+				{
+					"name": "Test Search Game \"fifa\"",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"game\" : \"fifa\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/searchGames",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"searchGames"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Search Game \"sonic\"",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"game\" : \"sonic\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/searchGames",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"searchGames"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Search Game \"call of duty\"",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"game\" : \"call of duty\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/searchGames",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"searchGames"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Missing Argument",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"game\" : \" \"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/searchGames",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"searchGames"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TestCreateGroup",
+			"item": [
+				{
+					"name": "Test Create Group",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\" : \"testName\" , \"description\" : \"testDescription\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/createGroup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"createGroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Create Group without Description",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\" : \"testName\" , \"description\" : \" \"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/createGroup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"createGroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Missing Argument",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\" : \" \" , \"description\" : \"testDescription\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/createGroup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"createGroup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TestListGroups",
+			"item": [
+				{
+					"name": "Test List Groups",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8888/listGroups",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"listGroups"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TestEditGroup",
+			"item": [
+				{
+					"name": "Test Edit Group Name",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\" : \"FM-RgXYB_YMpXeyu1DVr\" , \"parameter\" : \"Name\" , \"edit\" : \"testEdit\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/editGroup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"editGroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Edit Group Description",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\" : \"FM-RgXYB_YMpXeyu1DVr\" , \"parameter\" : \"Description\" , \"edit\" : \"testEdit\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/editGroup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"editGroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Wrong ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\" : \"0\" , \"parameter\" : \"Description\" , \"edit\" : \"testEdit\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/editGroup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"editGroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Missing Argument",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\" : \" \" , \"parameter\" : \"Description\" , \"edit\" : \"testEdit\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/editGroup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"editGroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Wrong Argument",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\" : \"FM-RgXYB_YMpXeyu1DVr\" , \"parameter\" : \"test\" , \"edit\" : \"testEdit\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/editGroup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"editGroup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TestShowGroup",
+			"item": [
+				{
+					"name": "Test Show Group",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\" : \"FM-RgXYB_YMpXeyu1DVr\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/showGroup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"showGroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Wrong ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\" : \"0\" }"
+						},
+						"url": {
+							"raw": "http://localhost:8888/showGroup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"showGroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Missing Argument",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\" : \" \" }"
+						},
+						"url": {
+							"raw": "http://localhost:8888/showGroup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"showGroup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TestAddGame",
+			"item": [
+				{
+					"name": "Test Add Game",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"groupID\" : \"FM-RgXYB_YMpXeyu1DVr\" , \"gameID\" : \"10\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/addGame",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"addGame"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Wrong Group ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"groupID\" : \"0\" , \"gameID\" : \"10\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/addGame",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"addGame"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Missing Argument",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"groupID\" : \"FM-RgXYB_YMpXeyu1DVr\" , \"gameID\" : \" \"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/addGame",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"addGame"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Game Already Exists In This Group",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"groupID\" : \"FM-RgXYB_YMpXeyu1DVr\" , \"gameID\" : \"10\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/addGame",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"addGame"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TestRemoveGame",
+			"item": [
+				{
+					"name": "Test Remove Game",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"groupID\" : \"FM-RgXYB_YMpXeyu1DVr\" , \"gameID\" : \"10\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/removeGame",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"removeGame"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Wrong Group ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"groupID\" : \"0\" , \"gameID\" : \"10\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/removeGame",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"removeGame"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Missing Argument",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"groupID\" : \" \" , \"gameID\" : \"10\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/removeGame",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"removeGame"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Game Non-existent In This Group",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"groupID\" : \"FM-RgXYB_YMpXeyu1DVr\" , \"gameID\" : \"10\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/removeGame",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"removeGame"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TestGamesByRating",
+			"item": [
+				{
+					"name": "Test Search Games in Group 0 with Ratings between 65 and 80",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\" : \"SGcccnYBsMFcEG1nRI-H\" , \"min\" : \"85\", \"max\" : \"90\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/gamesByRating",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"gamesByRating"
+							]
+						},
+						"description": "Must add games to Group 0 before testing"
+					},
+					"response": []
+				},
+				{
+					"name": "Wrong Group ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\" : \"0\" , \"min\" : \"85\", \"max\" : \"90\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/gamesByRating",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"gamesByRating"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Missing Argument",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\" : \"SGcccnYBsMFcEG1nRI-H\" , \"min\" : \" \", \"max\" : \"90\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/gamesByRating",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"gamesByRating"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Max Greater Than 100",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\" : \"SGcccnYBsMFcEG1nRI-H\" , \"min\" : \"85\", \"max\" : \"110\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/gamesByRating",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"gamesByRating"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Min Lower Than 0",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\" : \"SGcccnYBsMFcEG1nRI-H\" , \"min\" : \"-1\", \"max\" : \"90\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/gamesByRating",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"gamesByRating"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Min Greater Than Max",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\" : \"SGcccnYBsMFcEG1nRI-H\" , \"min\" : \"90\", \"max\" : \"85\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/gamesByRating",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"gamesByRating"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TestRemoveGroup",
+			"item": [
+				{
+					"name": "Test Remove Group",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\" : \"_89UgXYB_YMpXeyuBTTs\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/removeGroup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"removeGroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Wrong ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\" : \"0\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/removeGroup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"removeGroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Missing Argument",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\" : \" \"}"
+						},
+						"url": {
+							"raw": "http://localhost:8888/removeGroup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"removeGroup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

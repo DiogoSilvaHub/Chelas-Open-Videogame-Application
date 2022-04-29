@@ -1,0 +1,31 @@
+<h1>Here are all the Groups:</h1>
+
+<ul>
+	{{#each Groups}}
+		<li><div>{{this.name}}</div><div>{{this.description}}</div><div>Games:</div>
+		<ul>
+			{{#each this.games}}
+				<li><div>{{this.name}}</div><div>Rating: {{this.rating}}</div>
+				<form action="/removeGame" method="POST">
+					<input type="hidden" name="gameID" id="gameID" value={{this.id}}>
+					<input type="hidden" name="id" id="id" value={{this.groupID}}>
+					<input type="submit" value="Remove Game">
+				</form>
+				</li>
+			{{/each}}
+		</ul>
+		<form action="/insertBoundaries" method="POST">
+			<input type="hidden" name="id" id="id" value={{this.id}}>
+			<input type="submit" value="Sort Games By Rating">
+		</form>
+		<form action="/insertGroupToEdit" method="POST">
+			<input type="hidden" name="id" id="id" value={{this.id}}>
+			<input type="submit" value="Edit Group">
+		</form>
+		<form action="/removeGroup" method="POST">
+			<input type="hidden" name="id" id="id" value={{this.id}}>
+			<input type="submit" value="Remove Group">
+		</form>
+		<br></li>
+	{{/each}}
+</ul>

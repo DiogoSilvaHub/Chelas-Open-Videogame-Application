@@ -1,0 +1,9 @@
+<h1>Edit Group</h1>
+
+<form action="/editGroup" method="POST">
+	<input type="radio" name="parameter" value="Name"> Name
+	<input type="radio" name="parameter" value="Description"> Description
+	<input type="text" id="edit" name="edit">
+	<input  type="hidden" name="id" id="id" value={{id}}>
+	<input type="submit" value="Edit">
+</form>

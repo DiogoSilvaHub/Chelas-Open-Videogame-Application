@@ -1,0 +1,12 @@
+<h1>Top 10 Popular Games</h1>
+
+<ul>
+	{{#each PopularGames}}
+		<li><div>{{this.name}}</div><div>Rating:{{this.rating}}</div>
+		<form action="/whichGroup" method="POST">
+			<input type="hidden" name="id" id="id" value={{this.id}}>
+			<input type="submit" value="Add to Group">
+		</form>
+		<br></li>
+	{{/each}}
+</ul>

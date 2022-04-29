@@ -1,0 +1,11 @@
+<h1>Group:</h1>
+
+<ul>
+		<li><div>{{Group.name}}</div><div>{{Group.description}}</div><div>Games:</div>
+		<ul>
+			{{#each Group.games}}
+				<li><div>{{this.name}}</div><div>Rating: {{this.rating}}</div></li>
+			{{/each}}
+		</ul>
+		</li>
+</ul>
